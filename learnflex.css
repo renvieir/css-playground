@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #app {
+  height: 100%;
+  margin: 0;
+}
+
+#app {
+  display: flex;
+/*  flex-wrap: wrap; /* allow the items to wrap as needed */
+/*  flex-direction: row; /* direction of main axis */
+  justify-content: space-between; /* alignment along the main axis */
+  align-items: center; /* alignment along the cross axis */
+  align-content: flex-start; /* similar to how justify-content aligns individual items within the main-axis. */
+  flex-flow: row wrap /* shorthand for the flex-direction and flex-wrap properties */
+}
+
+.box {
+  width: 200px;
+  height: 100px;
+  border: 1px solid blueviolet;
+  background-color: blueviolet;
+  border-radius: 4px;
+  margin: 8px;
+/*  flex-grow: 1; /* the ability for a flex item to grow if necessary */
+/*  flex-shrink: 1; /* the ability for a flex item to shrink if necessary */
+/*  flex-basis: 0; /* the default size of an element before the remaining space is distributed */
+/*  flex: 1 0 auto; /* Shorthand for flex-grow, flex-shrink and flex-basis combined.
+                           The second and third parameters (flex-shrink and flex-basis) are optional.
+                           The default is 0 1 auto */
+}
+
+.box:last-of-type {
+  order: 9; /* defines order item will appear relative to others */
+  flex-grow: 2; /* take up twice as much space as the others (or it will try to, at least). */
+}
