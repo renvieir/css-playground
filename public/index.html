@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Learning Firebase Hosting</title>
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/7.9.1/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/7.9.1/firebase-auth.js"></script>
+    <script defer src="/__/firebase/7.9.1/firebase-database.js"></script>
+    <script defer src="/__/firebase/7.9.1/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/7.9.1/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+  </head>
+  <body>
+    <link rel="stylesheet" href="style.css">
+    <header id="main-header">
+      <div class="content">
+        <nav>
+          <ul>
+            <li>
+              <img src="./images/twitter-home.png" alt="twitter home icon">
+              Home
+            </li>
+            <li>
+              <img src="./images/twitter-home.png" alt="twitter home icon">
+              Notifications
+            </li>
+            <li>
+              <img src="./images/twitter-home.png" alt="twitter home icon">
+              Messages
+            </li>
+          </ul>
+        </nav>
+        <img id="logo-icon" src="./images/Twitter-icon.png" alt="twitter icon">
+        <div id="right-panel">
+          <input type="text" placeholder="search on twitter">
+          <img src="./images/avatar.jpg" alt="user's avatar">
+          <button>tweet</button>
+        </div>
+      </div>
+    </header>
+    <div class="banner">
+      <h1>My Twitter</h1>
+    </div>
+    <div class="bar">
+      <div class="content">
+        <ul>
+          <li class="active">
+            <span>Tweets</span>
+            <strong>1234</strong>
+          </li>
+          <li>
+            <span>Following</span>
+            <strong>1234</strong>
+          </li>
+          <li>
+            <span>Followers</span>
+            <strong>1234</strong>
+          </li>
+          <li>
+            <span>Favorites</span>
+            <strong>1234</strong>
+          </li>
+        </ul>
+    
+        <div class="actions">
+          <button>Follow</button>
+          <img src="./images/more.png" width="30" height="30" alt="more">
+        </div>
+      </div>
+    </div>
+    <div class="wrapper-content content">
+      <aside class="profile">
+        <img src="./images/avatar.jpg" class="avatar" alt="avatar">
+        <h1>Renato Pacheco</h1>
+        <span>@vieirarenatop</span>
+        <p>Minha bio</p>
+        <ul>
+          <li>
+            <img width="30" src="./images/twitter-home.png" alt="Place">
+            Manaus - AM
+          </li>
+          <li>
+            <img  width="30" src="./images/twitter-home.png" alt="URL">
+            https://renvieir.github.io
+          </li>
+          <li>
+            <img  width="30" src="./images/twitter-home.png" alt="Joined">
+            Joined June 2013
+          </li>
+          <li>
+            <img  width="30" src="./images/twitter-home.png" alt="Born">
+            15/11/1988
+          </li>
+        </ul>
+      </aside>
+      <section class="timeline">timeline</section>
+      <aside class="widgets">widget</aside>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+        // // The Firebase SDK is initialized and available here!
+        //
+        // firebase.auth().onAuthStateChanged(user => { });
+        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+        // firebase.messaging().requestPermission().then(() => { });
+        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+        //
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+
+        try {
+          let app = firebase.app();
+          let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
+          document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
+        } catch (e) {
+          console.error(e);
+          document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
+        }
+      });
+    </script>
+  </body>
+</html>
